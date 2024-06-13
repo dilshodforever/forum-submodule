@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package protos;
+import "user.proto";
+import "tags.proto";
+import "posts.proto";
+service PostTagsService {
+    rpc CreatePostTags(PostTags) returns (Void) {}
+    rpc DeletePostTags(ById) returns (Void) {}
+    rpc UpdatePostTags(PostTags) returns(Void){}
+    rpc GetByIdPostTags(ById) returns (PostTags) {}
+    rpc GetAllPostTags(PostTags) returns (GetAllPostTagss){}
+}
+
+
+message PostTags {
+    string id = 1;
+    Posts posts = 2;
+    Tags  tags =3;
+}
+
+message GetAllPostTagss {
+    repeated PostTags posttagss =1;
+}

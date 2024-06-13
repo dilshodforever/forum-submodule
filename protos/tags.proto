@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package protos;
+import "user.proto";
+
+service TagsService {
+    rpc CreateTags(Tags) returns (Void) {}
+    rpc DeleteTags(ById) returns (Void) {}
+    rpc UpdateTags(Tags) returns(Void){}
+    rpc GetByIdTags(ById) returns (Tags) {}
+    rpc GetAllTags(Tags) returns (GetAllTagss){}
+}
+- `tag_id` (int, Primary Key)
+- `name` (varchar, 100)
+- `created_at` (timestamp)
+- `updated_at` (timestamp)
+- `deleted_at` (timestamp, nullable)
+
+message Tags {
+    string id = 1;
+    string name =2;
+    string created_at= 3;
+    string updeted_at= 4;
+    string deleted_at= 5;
+}
+
+message GetAllTagss {
+    repeated Tags tagss =1;
+}

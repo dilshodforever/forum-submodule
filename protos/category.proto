@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package protos;
+import "user.proto";
+service CategoryService {
+    rpc CreateCategory(Category) returns (Void) {}
+    rpc DeleteCategory(ById) returns (Void) {}
+    rpc UpdateCategory(Category) returns(Void){}
+    rpc GetByIdCategory(ById) returns (Category) {}
+    rpc GetAllCategory(Category) returns (GetAllCategorys){}
+    rpc Categorys(Category) returns(Void){}
+}
+
+message Category {
+    string id = 1;
+    string name =2;
+    string created_at= 3;
+    string updeted_at= 4;
+    string deleted_at= 5;
+}
+
+message GetAllCategorys {
+    repeated Category categorys =1;
+}
