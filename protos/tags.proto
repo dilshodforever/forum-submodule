@@ -12,11 +12,6 @@ service TagsService {
     rpc GetByIdTags(ById) returns (Tags) {}
     rpc GetAllTags(Tags) returns (GetAllTagss){}
 }
-- `tag_id` (int, Primary Key)
-- `name` (varchar, 100)
-- `created_at` (timestamp)
-- `updated_at` (timestamp)
-- `deleted_at` (timestamp, nullable)
 
 message Tags {
     string id = 1;
