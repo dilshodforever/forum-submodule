@@ -16,9 +16,9 @@ service PostTagsService {
 
 
 message PostTags {
-    string id = 1;
     Posts posts = 2;
     Tags  tags =3;
+    string deleted_at =4;
 }
 
 message GetAllPostTagss {
