@@ -27,3 +27,10 @@ message Comments {
 message GetAllCommentss {
     repeated Comments comments =1;
 }
+
+message Comments_Querry {
+    string postid=1;
+    string userid =2;
+    string body = 3;
+}
+

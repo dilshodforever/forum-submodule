@@ -10,7 +10,7 @@ service TagsService {
     rpc DeleteTags(ById) returns (Void) {}
     rpc UpdateTags(Tags) returns(Void){}
     rpc GetByIdTags(ById) returns (Tags) {}
-    rpc GetAllTags(Tags) returns (GetAllTagss){}
+    rpc GetAllTags(Tags) returns (GetAllTags){}
 }
 
 message Tags {
@@ -21,6 +21,6 @@ message Tags {
     string deleted_at= 5;
 }
 
-message GetAllTagss {
+message GetAllTags {
     repeated Tags tagss =1;
 }

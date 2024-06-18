@@ -10,7 +10,7 @@ service PostsService {
     rpc DeletePosts(ById) returns (Void) {}
     rpc UpdatePosts(Posts) returns(Void){}
     rpc GetByIdPosts(ById) returns (Posts) {}
-    rpc GetAllPosts(Posts) returns (GetAllPostss){}
+    rpc GetAllPosts(Posts) returns (GetAllPosts){}
 }
 
 message Posts {
@@ -24,6 +24,13 @@ message Posts {
     string deleted_at= 8;
 }
 
-message GetAllPostss {
+message GetAllPosts {
     repeated Posts posts = 1;
+}
+
+message Posts_Query {
+    string   userid = 1;
+    string   categoryid = 2;
+    string   title = 3;
+    string   body = 4;
 }

@@ -11,16 +11,21 @@ service PostTagsService {
     rpc DeletePostTags(ById) returns (Void) {}
     rpc UpdatePostTags(PostTags) returns(Void){}
     rpc GetByIdPostTags(ById) returns (PostTags) {}
-    rpc GetAllPostTags(PostTags) returns (GetAllPostTagss){}
+    rpc GetAllPostTags(PostTags) returns (GetAllPostTags){}
 }
 
 
 message PostTags {
-    Posts posts = 2;
-    Tags  tags =3;
-    string deleted_at =4;
+    Posts posts = 1;
+    Tags  tags =2;
+    string deleted_at =3;
 }
 
-message GetAllPostTagss {
-    repeated PostTags posttagss =1;
+message GetAllPostTags {
+    repeated PostTags posttags =1;
+}
+
+message PostTags_Query {
+    string postid = 1;
+    string  tagis =2;
 }
